@@ -10,7 +10,7 @@ def get_lift_record(exercise, current_record):
         if weight > current_record:
             return weight
         return current_record
-
+    
 
 def trackweight():
     lifts = {"Bench": 0, "Deadlift": 0, "Squat": 0}
