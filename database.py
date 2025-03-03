@@ -6,25 +6,24 @@ conn = sqlite3.connect('customer.db')
 # create cursor
 c = conn.cursor()
 
-# create table
-c.execute("SELECT * FROM customers")
+# order by
+c.execute("SELECT rowid, * FROM customers ORDER BY rowid DESC LIMIT 2")
 
 # print(c.fetchone()[0])
 # print(c.fetchmany(3))
 
 items = c.fetchall()
 
-print("NAME " + "\tLAST NAME " + "\tEMAIL ")
-print("-----" + "\t----------" + "\t----------")
 for item in items:
-    print(item[0] + "\t" + item[1] + "\t\t" + item[2])
-# NULL
-# INTEGER
-# REALS
-# TEXT
-# BLOB
+    print(item)
 
-print("Command executed successfully...")
+# Types  
+    # NULL
+    # INTEGER
+    # REALS
+    # TEXT
+    # BLOB
+
 
 # commit command
 conn.commit()
